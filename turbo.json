@@ -14,6 +14,14 @@
 				"lib-typings/**"
 			]
 		},
+		"deploy": {
+			"dependsOn": [
+				"^build"
+			],
+			"outputs": [
+				"dist/**"
+			]
+		},
 		"lint": {},
 		"dev": {
 			"cache": false,

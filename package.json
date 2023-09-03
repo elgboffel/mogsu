@@ -1,13 +1,13 @@
 {
   "scripts": {
     "build": "turbo run build",
+		"build:web": "turbo run build --filter @project/web",
     "dev": "turbo run dev",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
 		"prepare": "husky install"
 	},
   "devDependencies": {
-
 		"@turbo/gen": "1.10.12",
 		"dotenv": "16.3.1",
 		"eslint": "8.47.0",
