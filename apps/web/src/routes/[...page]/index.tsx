@@ -6,7 +6,9 @@ import { routeLoader$, useLocation } from "@builder.io/qwik-city";
 
 // eslint-disable-next-line turbo/no-undeclared-env-vars
 const cms = getSdk(
-  new GraphQLClient("https://eu-central-1-shared-euc1-02.cdn.hygraph.com/content/cllkrywks070o01ui6qqpb9gk/master")
+  new GraphQLClient("https://eu-central-1-shared-euc1-02.cdn.hygraph.com/content/cllkrywks070o01ui6qqpb9gk/master", {
+    fetch,
+  })
 );
 
 export const useCmsContent = routeLoader$(async ({ params, error, cacheControl }) => {
