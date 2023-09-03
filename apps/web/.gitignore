@@ -1,2 +1,5 @@
 # Cloudflare
 functions/**/*.js
+
+# Build
+server
