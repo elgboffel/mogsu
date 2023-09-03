@@ -1,0 +1,28 @@
+{
+	"name": "common",
+	"version": "1.0.0",
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist/**"
+	],
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"lint": "eslint \"src/**/*.ts\""
+	},
+	"dependencies": {
+		"graphql": "^16.8.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.3.1",
+		"eslint": "^8.43.0",
+		"eslint-config-custom": "workspace:*",
+		"tsconfig": "workspace:*",
+		"tsup": "7.2.0",
+		"typescript": "5.1.6"
+	}
+}

@@ -1,0 +1,52 @@
+{
+  "name": "@project/web",
+  "description": "Web app",
+  "engines": {
+    "node": ">=15.0.0"
+  },
+  "private": true,
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
+    "build.types": "tsc --incremental --noEmit",
+    "deploy": "wrangler pages publish ./dist",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "prebuild.pandacss": "panda codegen --silent",
+    "preview": "vite preview --open",
+    "serve": "wrangler pages dev ./dist",
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik"
+  },
+  "dependencies": {
+    "@project/ui": "workspace:*",
+    "@project/css-preset": "workspace:*",
+    "@project/cms-sdk": "workspace:*",
+    "graphql-request": "6.1.0"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "1.2.10",
+    "@builder.io/qwik-city": "1.2.10",
+    "@builder.io/vite-plugin-macro": "~0.0.7",
+    "@pandacss/dev": "0.11.1",
+    "@types/eslint": "8.44.2",
+    "@types/node": "20.5.1",
+    "@typescript-eslint/eslint-plugin": "6.4.0",
+    "@typescript-eslint/parser": "6.4.0",
+    "common": "workspace:*",
+    "eslint": "8.47.0",
+    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-qwik": "1.2.7",
+    "tsconfig": "workspace:*",
+    "typescript": "5.1.6",
+    "undici": "5.23.0",
+    "vite": "4.4.9",
+    "vite-tsconfig-paths": "4.2.0",
+    "wrangler": "^3.0.0"
+  }
+}

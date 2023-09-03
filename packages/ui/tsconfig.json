@@ -1,0 +1,12 @@
+{
+	"extends": "tsconfig/qwik-lib.json",
+	"compilerOptions": {
+		"declarationDir": "lib-types",
+		"types": ["vite/client"],
+		"paths": {
+			"@styled-system*": ["./src/styled-system/*"],
+			"@components*": ["./src/components/*"]
+		}
+	},
+	"include": ["src"]
+}

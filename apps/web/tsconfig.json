@@ -1,0 +1,16 @@
+{
+	"extends": "tsconfig/qwik.json",
+  "compilerOptions": {
+		"outDir": "tmp",
+		"types": ["node", "vite/client"],
+		"paths": {
+      "~/*": ["./src/*"],
+      "@styled-system*": ["./src/styled-system/*"],
+      "@components*": ["./src/components/*"],
+      "@media*": ["./src/media/*"],
+    }
+  },
+  "files": ["./.eslintrc.cjs"],
+  "include": ["src", "./*.d.ts", "./*.config.ts", "styled-system"],
+  "exclude": ["node_modules", "panda.config.ts"]
+}

@@ -1,0 +1,5 @@
+﻿query GetPage($slug: String!) {
+  post(where: { slug: $slug }) {
+    title
+  }
+}
