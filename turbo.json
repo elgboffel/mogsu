@@ -6,7 +6,7 @@
 	"pipeline": {
 		"build": {
 			"dependsOn": [
-				"^build", "^prepare"
+				"^build"
 			],
 			"outputs": [
 				"dist/**",
