@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "turbo run build",
-		"build:web": "turbo run build --filter @project/web",
+		"build.web": "turbo run build --filter @project/web",
     "dev": "turbo run dev",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
