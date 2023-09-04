@@ -46,6 +46,7 @@ export const head: DocumentHead = ({ resolveValue }) => {
 
 export const onStaticGenerate: StaticGenerateHandler = async () => {
   const slugs = await cms.GetAllRoutes();
+  console.log(slugs);
   const params = slugs.posts.map(({ slug }) => {
     return { page: slug as string };
   });
