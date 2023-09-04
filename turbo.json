@@ -11,16 +11,18 @@
 			"outputs": [
 				"dist/**",
 				"lib/**",
-				"lib-typings/**"
+				"lib-typings/**",
+				".vercel/**"
 			]
 		},
-		"deploy": {
+		"web#build": {
 			"dependsOn": [
 				"^build"
 			],
 			"outputs": [
-				"dist/**"
-			]
+				".vercel/**"
+			],
+			"env": ["NEXT_PUBLIC_CMS_GRAPHQL_ENDPOINT", "NEXT_PUBLIC_CMS_TOKEN", "CODEGEN_ROOT_FOLDER_PATH"]
 		},
 		"lint": {},
 		"dev": {
