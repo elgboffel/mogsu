@@ -14,6 +14,7 @@ export default extendConfig(baseConfig, () => {
     plugins: [
       cloudflarePagesAdapter(),
       staticAdapter({
+        exclude: [],
         origin: "https://yoursite.qwik.dev",
       }),
     ],
