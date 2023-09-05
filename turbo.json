@@ -20,7 +20,7 @@
 				"^build"
 			],
 			"outputs": [
-				".vercel/**"
+				"dist/**"
 			],
 			"env": ["NEXT_PUBLIC_CMS_GRAPHQL_ENDPOINT", "NEXT_PUBLIC_CMS_TOKEN", "CODEGEN_ROOT_FOLDER_PATH"]
 		},

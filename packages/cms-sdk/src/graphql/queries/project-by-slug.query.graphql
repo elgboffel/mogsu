@@ -1,0 +1,7 @@
+﻿query GetProjectBySlug($slug: String!) {
+  project(where: { slug: $slug }) {
+    id
+    slug
+    name
+  }
+}
