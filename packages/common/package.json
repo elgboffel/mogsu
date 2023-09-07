@@ -11,8 +11,10 @@
 	"scripts": {
 		"build": "tsup",
 		"dev": "tsup --watch",
-		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
-		"lint": "eslint \"src/**/*.ts\""
+		"typecheck": "tsc --project tsconfig.json --pretty --noEmit",
+		"lint": "eslint \"src/**/*.{ts,tsx,js,jsx,mjs,cjs,json,graphql}\" --fix",
+		"format": "prettier --write \"src/**/*.{css,scss,sass,ts,tsx,js,jsx,md,json,graphql,mjs,cjs}\"",
+		"format.check": "prettier --check ."
 	},
 	"dependencies": {
 		"graphql": "^16.8.0"

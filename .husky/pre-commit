@@ -8,5 +8,5 @@ then
 else
   echo "FE Changes detected, running FE Git Hooks"
   cd ./ || exit
-  pnpm typecheck && pnpm lint-staged
+  pnpm typecheck && pnpm lint && pnpm format
 fi
