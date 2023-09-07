@@ -9,12 +9,12 @@
 		"dist/**"
 	],
 	"scripts": {
-		"build": "pnpm codegen:cms && tsup",
+		"build": "tsup",
 		"clean": "rimraf ./generated",
 		"codegen:cms": "pnpm clean && graphql-codegen -r dotenv/config --config ./graphql-codegen.cms.config.ts",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
 		"lint": "eslint \"src/**/*.ts\"",
-		"prepare": "pnpm codegen:cms"
+		"prebuild": "pnpm codegen:cms"
 	},
 	"dependencies": {
 		"graphql-request": "6.1.0"
