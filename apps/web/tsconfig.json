@@ -11,6 +11,6 @@
     }
   },
   "files": ["./.eslintrc.cjs"],
-  "include": ["src", "./*.d.ts", "./*.config.ts", "styled-system"],
+  "include": ["src"],
   "exclude": ["node_modules", "panda.config.ts"]
 }

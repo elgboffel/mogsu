@@ -1,9 +1,8 @@
 import { component$ } from "@builder.io/qwik";
-import { css } from "@styled-system/css";
 
 export const Logo = component$(() => {
   return (
-    <div class={css({ bg: "primary" })}>
+    <div>
       <a href="https://qwik.builder.io/">
         <img
           alt="Qwik Logo"

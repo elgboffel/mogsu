@@ -1,5 +1,4 @@
 import { defineConfig } from "@pandacss/dev";
-
 import preset from "@project/css-preset";
 
 export default defineConfig({
@@ -20,6 +19,8 @@ export default defineConfig({
   theme: {
     extend: {},
   },
+
+  emitPackage: true,
 
   // The output directory for your css system
   outdir: "src/styled-system",

@@ -1,7 +1,7 @@
 {
 	"extends": "tsconfig/ts-lib.json",
 	"include": [
-		"**/*.ts",
+		"src/**/*.ts",
 		"tsup.config.ts"
 	],
 	"exclude": [

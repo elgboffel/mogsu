@@ -1,59 +1,58 @@
 {
-	"name": "@project/ui",
-	"license": "MIT",
-	"version": "0.0.1",
-	"description": "Create a reusable Qwik component library",
-	"main": "./lib/index.qwik.mjs",
-	"qwik": "./lib/index.qwik.mjs",
-	"types": "./lib-types/index.d.ts",
-	"exports": {
-		".": {
-			"import": "./lib/index.qwik.mjs",
-			"require": "./lib/index.qwik.cjs",
-			"types": "./lib-types/index.d.ts"
-		}
-	},
-	"files": [
-		"lib",
-		"lib-types"
-	],
-	"engines": {
-		"node": ">=15.0.0"
-	},
-	"private": false,
-	"type": "module",
-	"scripts": {
-		"build": "qwik build",
-		"build.lib": "vite build --mode lib",
-		"build.types": "tsc --emitDeclarationOnly",
-		"dev": "vite --mode ssr",
-		"dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
-		"typecheck": "tsc --project tsconfig.json --pretty --noEmit",
-		"lint": "eslint \"src/**/*.{ts,tsx,js,jsx,mjs,cjs,json,graphql}\" --fix",
-		"format": "prettier --write \"src/**/*.{css,scss,sass,ts,tsx,js,jsx,md,json,graphql,mjs,cjs}\"",
-		"format.check": "prettier --check .",
-		"start": "vite --open --mode ssr",
-		"qwik": "qwik",
-		"prebuild.pandacss": "panda codegen --silent"
-	},
-  "peerDependencies": {
+  "name": "@project/ui",
+  "version": "0.0.1",
+  "description": "Create a reusable Qwik component library",
+  "main": "./src/index.ts",
+  "qwik": "./lib/index.qwik.mjs",
+  "types": "./lib-types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib-types/index.d.ts"
+    }
+  },
+  "files": [
+    "lib",
+    "lib-types",
+    "src"
+  ],
+  "engines": {
+    "node": ">=15.0.0"
+  },
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "qwik build",
+    "build.lib": "vite build --mode lib",
+    "build.types": "tsc --emitDeclarationOnly",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "prebuild.pandacss": "panda codegen --silent",
+    "release": "np",
+    "start": "vite --open --mode ssr",
+    "test": "echo \"No test specified\" && exit 0",
+    "qwik": "qwik"
   },
   "devDependencies": {
-	"@types/eslint": "8.44.1",
-	"@builder.io/qwik": "1.2.7",
-	"@typescript-eslint/eslint-plugin": "6.2.0",
-	"@typescript-eslint/parser": "6.2.0",
-	"@types/node": "^20.4.5",
-	"@pandacss/dev": "0.11.1",
-  	"@project/css-preset": "workspace:*",
-	"eslint": "8.47.0",
-	"eslint-config-custom": "workspace:*",
-	"tsconfig": "workspace:*",
-	"typescript": "5.1.6",
-	"eslint-plugin-qwik": "latest",
-	"np": "7.6.1",
-	"undici": "5.22.1",
-	"vite": "4.4.7",
-	"vite-tsconfig-paths": "4.2.0"
+    "@builder.io/qwik": "1.2.11",
+    "@builder.io/vite-plugin-macro": "~0.0.7",
+    "@pandacss/dev": "^0.8.0",
+    "@types/eslint": "8.44.1",
+    "@types/node": "^20.4.5",
+    "@typescript-eslint/eslint-plugin": "6.2.0",
+    "@typescript-eslint/parser": "6.2.0",
+    "@project/css-preset": "workspace:*",
+    "eslint": "8.45.0",
+    "eslint-plugin-qwik": "latest",
+    "np": "7.6.1",
+    "prettier": "3.0.0",
+    "typescript": "5.1.6",
+    "undici": "5.22.1",
+    "vite": "4.4.7",
+    "vite-tsconfig-paths": "4.2.0"
   }
 }
