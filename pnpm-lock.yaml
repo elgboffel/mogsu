@@ -230,9 +230,6 @@ importers:
       '@pandacss/dev':
         specifier: ^0.8.0
         version: 0.8.0(@internationalized/date@3.4.0)(@types/node@20.5.1)(@types/react-dom@18.2.7)(@types/react@18.2.20)(astro@2.9.6)(typescript@5.1.6)
-      '@pandacss/preset-panda':
-        specifier: 0.14.0
-        version: 0.14.0
       '@project/css-preset':
         specifier: workspace:*
         version: link:../css-preset
@@ -4341,12 +4338,6 @@ packages:
     dependencies:
       '@pandacss/types': 0.11.1
 
-  /@pandacss/preset-panda@0.14.0:
-    resolution: {integrity: sha512-etzlceIphODXMyliQzqkNpdsmsdPTlDAAKZs3KhfeUpU27k+1ElJ19sYtgTZ9jesTRe0xSdgBRrj3jqq1qJdqA==}
-    dependencies:
-      '@pandacss/types': 0.14.0
-    dev: true
-
   /@pandacss/preset-panda@0.8.0:
     resolution: {integrity: sha512-K4ZZoD917k2t99JO7TzKRdVhlrWkz0CVOqzswKJZpg4xAXhL+uL+jeBVKrKcr8FbXFk6ZKQXdVIq0OF4yay+Qw==}
     dependencies:
@@ -4445,10 +4436,6 @@ packages:
 
   /@pandacss/types@0.11.1:
     resolution: {integrity: sha512-h/wOIO+YEapnNIFYMpS3hYXWH0DlqB+OivrADYtapOf2Y4sFg3ReyQdkwRKQ4ZWIfJKH8jEXd/xTvMQhvZ3arw==}
-
-  /@pandacss/types@0.14.0:
-    resolution: {integrity: sha512-AvCvonsQWxJD8viDt/Gif7zYZqvE363Rnhvv9nO6kAwxKCwEXp4CTDL93Kaf9h6OO0rZnmGcCr8VRdYfH62x+Q==}
-    dev: true
 
   /@pandacss/types@0.8.0:
     resolution: {integrity: sha512-rA77ztVZZMZYMcgjT7wuxqfaMSjUk5e5MN3RQZUp+/9cnki1tfTepQv6DMp4XgjYidbgJ/3OSCX/1Tu1P2RxHQ==}
