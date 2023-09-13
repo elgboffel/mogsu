@@ -1,5 +1,5 @@
 {
-	"name": "@project/cms-sdk",
+	"name": "@project/builder-sdk",
 	"version": "1.0.0",
 	"license": "MIT",
 	"main": "./dist/index.js",

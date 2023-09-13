@@ -1,0 +1,257 @@
+schema {
+  query: RootQueryType
+}
+
+directive @target(target: JSONObject) on QUERY
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""
+The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSONObject
+
+"""Link field"""
+type LinkField {
+  content: JSONObject
+  createdBy: String
+  createdDate: Float
+  data: LinkFieldData
+  endDate: Float
+  everything: JSONObject
+  id: ID
+  lastUpdated: Float
+  lastUpdatedBy: String
+  modelId: String
+  name: ID
+  ownerId: ID
+  published: String
+  query: [Query]
+  screenshot: String
+  startDate: Float
+  testRatio: Int
+  variations: JSONObject
+}
+
+type LinkFieldData {
+  """"""
+  name: String
+
+  """"""
+  url: String
+}
+
+""""""
+type Page {
+  content: JSONObject
+  createdBy: String
+  createdDate: Float
+  data: PageData
+  endDate: Float
+  everything: JSONObject
+  id: ID
+  lastUpdated: Float
+  lastUpdatedBy: String
+  modelId: String
+  name: ID
+  ownerId: ID
+  published: String
+  query: [Query]
+  screenshot: String
+  startDate: Float
+  testRatio: Int
+  variations: JSONObject
+}
+
+type PageData {
+  """"""
+  blocks: JSON
+  css: String
+  cssCode: String
+  customFonts: JSON
+  html: String
+  httpRequests: JSON
+  inputs: JSON
+  jsCode: String
+  state: JSON
+  url: String
+}
+
+type Query {
+  operator: String
+  property: String
+  value: JSON
+}
+
+type RootQueryType {
+  """Fetch link-field results"""
+  linkField(
+    """Limit results returned, e.g. `limit: 10, offset: 10`"""
+    limit: Int
+
+    """Offset results returned, e.g. `limit: 10, offset: 10`"""
+    offset: Int
+
+    """Additional API options, e.g. `options: { includeUnpublished: true }`"""
+    options: JSONObject
+
+    """
+    Filter results via mongodb queries. e.g. `query: { id: 'abc123', data: { customNumberField: { $lt: 100 } } }
+    """
+    query: JSONObject
+
+    """Order results, e.g. `sort: { createdDate: -1 }"""
+    sort: JSONObject
+
+    """
+    Pass targeting info, like `target: { urlPath: '/foobar', device: 'mobile' }`
+    """
+    target: JSONObject
+  ): [LinkField]
+
+  """Fetch just one link-field"""
+  oneLinkField(
+    """Offset results returned, e.g. `limit: 10, offset: 10`"""
+    offset: Int
+
+    """Additional API options, e.g. `options: { includeUnpublished: true }`"""
+    options: JSONObject
+
+    """
+    Filter results via mongodb queries. e.g. `query: { id: 'abc123', data: { customNumberField: { $lt: 100 } } }
+    """
+    query: JSONObject
+
+    """Order results, e.g. `sort: { createdDate: -1 }"""
+    sort: JSONObject
+
+    """
+    Pass targeting info, like `target: { urlPath: '/foobar', device: 'mobile' }`
+    """
+    target: JSONObject
+  ): LinkField
+
+  """Fetch just one page"""
+  onePage(
+    """Offset results returned, e.g. `limit: 10, offset: 10`"""
+    offset: Int
+
+    """Additional API options, e.g. `options: { includeUnpublished: true }`"""
+    options: JSONObject
+
+    """
+    Filter results via mongodb queries. e.g. `query: { id: 'abc123', data: { customNumberField: { $lt: 100 } } }
+    """
+    query: JSONObject
+
+    """Order results, e.g. `sort: { createdDate: -1 }"""
+    sort: JSONObject
+
+    """
+    Pass targeting info, like `target: { urlPath: '/foobar', device: 'mobile' }`
+    """
+    target: JSONObject
+  ): Page
+
+  """Fetch just one settings"""
+  oneSettings(
+    """Offset results returned, e.g. `limit: 10, offset: 10`"""
+    offset: Int
+
+    """Additional API options, e.g. `options: { includeUnpublished: true }`"""
+    options: JSONObject
+
+    """
+    Filter results via mongodb queries. e.g. `query: { id: 'abc123', data: { customNumberField: { $lt: 100 } } }
+    """
+    query: JSONObject
+
+    """Order results, e.g. `sort: { createdDate: -1 }"""
+    sort: JSONObject
+
+    """
+    Pass targeting info, like `target: { urlPath: '/foobar', device: 'mobile' }`
+    """
+    target: JSONObject
+  ): Settings
+
+  """Fetch page results"""
+  page(
+    """Limit results returned, e.g. `limit: 10, offset: 10`"""
+    limit: Int
+
+    """Offset results returned, e.g. `limit: 10, offset: 10`"""
+    offset: Int
+
+    """Additional API options, e.g. `options: { includeUnpublished: true }`"""
+    options: JSONObject
+
+    """
+    Filter results via mongodb queries. e.g. `query: { id: 'abc123', data: { customNumberField: { $lt: 100 } } }
+    """
+    query: JSONObject
+
+    """Order results, e.g. `sort: { createdDate: -1 }"""
+    sort: JSONObject
+
+    """
+    Pass targeting info, like `target: { urlPath: '/foobar', device: 'mobile' }`
+    """
+    target: JSONObject
+  ): [Page]
+
+  """Fetch settings results"""
+  settings(
+    """Limit results returned, e.g. `limit: 10, offset: 10`"""
+    limit: Int
+
+    """Offset results returned, e.g. `limit: 10, offset: 10`"""
+    offset: Int
+
+    """Additional API options, e.g. `options: { includeUnpublished: true }`"""
+    options: JSONObject
+
+    """
+    Filter results via mongodb queries. e.g. `query: { id: 'abc123', data: { customNumberField: { $lt: 100 } } }
+    """
+    query: JSONObject
+
+    """Order results, e.g. `sort: { createdDate: -1 }"""
+    sort: JSONObject
+
+    """
+    Pass targeting info, like `target: { urlPath: '/foobar', device: 'mobile' }`
+    """
+    target: JSONObject
+  ): [Settings]
+}
+
+"""Site settings"""
+type Settings {
+  content: JSONObject
+  createdBy: String
+  createdDate: Float
+  data: SettingsData
+  endDate: Float
+  everything: JSONObject
+  id: ID
+  lastUpdated: Float
+  lastUpdatedBy: String
+  modelId: String
+  name: ID
+  ownerId: ID
+  published: String
+  query: [Query]
+  screenshot: String
+  startDate: Float
+  testRatio: Int
+  variations: JSONObject
+}
+
+type SettingsData {
+  """"""
+  navigation: JSON
+}

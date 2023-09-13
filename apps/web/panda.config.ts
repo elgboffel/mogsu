@@ -1,4 +1,4 @@
-import { defineConfig } from "@pandacss/dev";
+import {defineConfig} from "@pandacss/dev";
 
 import preset from "@project/css-preset";
 
@@ -6,6 +6,7 @@ export default defineConfig({
   jsxFramework: "qwik",
 
   presets: [preset],
+
 
   // Whether to use css reset
   preflight: true,

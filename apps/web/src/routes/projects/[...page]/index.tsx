@@ -1,8 +1,8 @@
-import {component$} from "@builder.io/qwik";
-import type {DocumentHead} from "@builder.io/qwik-city";
-import {getSdk} from "@project/cms-sdk";
-import {GraphQLClient} from "graphql-request";
-import {routeLoader$} from "@builder.io/qwik-city";
+import { component$ } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { getSdk } from "@project/cms-sdk";
+import { GraphQLClient } from "graphql-request";
+import { routeLoader$ } from "@builder.io/qwik-city";
 
 // eslint-disable-next-line turbo/no-undeclared-env-vars
 const cms = getSdk(
@@ -11,8 +11,8 @@ const cms = getSdk(
   })
 );
 
-export const useCmsContent = routeLoader$(async ({params, error, cacheControl}) => {
-  const data = await cms.GetProjectBySlug({slug: params.page});
+export const useCmsContent = routeLoader$(async ({ params, error, cacheControl }) => {
+  const data = await cms.GetProjectBySlug({ slug: params.page });
 
   // If there's no content, throw a 404.
   // You can use your own 404 component here
@@ -35,7 +35,7 @@ export default component$(() => {
   return <>{content.value.project?.name}</>;
 });
 
-export const head: DocumentHead = ({resolveValue}) => {
+export const head: DocumentHead = ({ resolveValue }) => {
   const content = resolveValue(useCmsContent);
   return {
     title: content.project?.name,

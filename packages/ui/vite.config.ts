@@ -1,9 +1,6 @@
 import { defineConfig } from "vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { macroPlugin } from "@builder.io/vite-plugin-macro";
-const makeRegex = (dep) => new RegExp(`^${dep}(/.*)?$`);
-const excludeAll = (obj) => Object.keys(obj).map(makeRegex);
 
 export default defineConfig(() => {
   return {

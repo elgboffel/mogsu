@@ -1,0 +1,6 @@
+﻿query GetPage($urlPath: String!) {
+  onePage (target: { urlPath: $urlPath }) {
+    name
+    id
+  }
+}

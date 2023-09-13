@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@project/cms-sdk": "workspace:*",
+    "@project/builder-sdk": "workspace:*",
     "@project/css-preset": "workspace:*",
     "@project/ui": "workspace:*",
     "graphql-request": "6.1.0"
