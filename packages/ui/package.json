@@ -2,8 +2,9 @@
   "name": "@project/ui",
   "version": "0.0.1",
   "description": "Create a reusable Qwik component library",
-  "main": "./lib/index.qwik.mjs",
+  "main": "./src/index.tsx",
   "types": "./lib-types/index.d.ts",
+  "sideEffects": false,
   "files": [
     "lib",
     "lib-types",

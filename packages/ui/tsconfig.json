@@ -18,5 +18,5 @@
     "types": ["vite/client"]
   },
   "include": ["src"],
-  "exclude": ["panda.config.ts"]
+  "exclude": ["panda.config.ts", "lib", "lib-types'", "node_modules"]
 }
