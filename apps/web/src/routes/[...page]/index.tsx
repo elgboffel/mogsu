@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import type { DocumentHead, StaticGenerateHandler } from "@builder.io/qwik-city";
+import type { DocumentHead } from "@builder.io/qwik-city";
 import { getSdk } from "@project/builder-sdk";
 import { GraphQLClient } from "graphql-request";
 import { routeLoader$, useLocation } from "@builder.io/qwik-city";
@@ -44,14 +44,14 @@ export const head: DocumentHead = ({ resolveValue }) => {
   };
 };
 
-export const onStaticGenerate: StaticGenerateHandler = async () => {
-  const slugs = await cms.GetAllRoutes();
-  console.log(slugs);
-  const params = slugs?.page?.map((page) => {
-    return { page: page?.data?.url as string };
-  });
-
-  return {
-    params,
-  };
-};
+// export const onStaticGenerate: StaticGenerateHandler = async () => {
+//   const slugs = await cms.GetAllRoutes();
+//   console.log(slugs);
+//   const params = slugs?.page?.map((page) => {
+//     return { page: page?.data?.url as string };
+//   });
+//
+//   return {
+//     params,
+//   };
+// };

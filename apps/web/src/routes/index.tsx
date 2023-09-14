@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead, RequestHandler } from "@builder.io/qwik-city";
 import { Counter, Logo } from "@project/ui";
-import { css } from "@styled-system/css";
+import { css } from "@project/styled-system/css";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   cacheControl({

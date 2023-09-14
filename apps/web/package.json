@@ -6,7 +6,7 @@
   },
   "private": true,
   "scripts": {
-    "build": "panda codegen && qwik build",
+    "build": "pnpm prebuild && pnpm run build.types && pnpm run build.client && pnpm run build.server",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
@@ -14,13 +14,15 @@
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "typecheck": "tsc --project tsconfig.json --pretty --noEmit",
-		"lint": "eslint \"src/**/*.{ts,tsx,js,jsx,mjs,cjs,json,graphql}\" --fix",
-		"format": "prettier --write \"src/**/*.{css,scss,sass,ts,tsx,js,jsx,md,json,graphql,mjs,cjs}\"",
-		"format.check": "prettier --check .",
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx,mjs,cjs,json,graphql}\" --fix",
+    "format": "prettier --write \"src/**/*.{css,scss,sass,ts,tsx,js,jsx,md,json,graphql,mjs,cjs}\"",
+    "format.check": "prettier --check .",
     "preview": "vite preview --open",
     "serve": "wrangler pages dev ./dist",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "prepare": "panda codegen --silent",
+    "prebuild": "pnpm prepare"
   },
   "dependencies": {
     "@project/cms-sdk": "workspace:*",

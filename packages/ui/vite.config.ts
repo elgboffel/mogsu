@@ -4,6 +4,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(() => {
   return {
+    plugins: [qwikVite(), tsconfigPaths()],
     build: {
       target: "es2020",
       lib: {
@@ -16,6 +17,5 @@ export default defineConfig(() => {
         external: [/^node:.*/],
       },
     },
-    plugins: [qwikVite(), tsconfigPaths()],
   };
 });

@@ -1,6 +1,5 @@
 import { defineConfig } from "@pandacss/dev";
 import preset from "@project/css-preset";
-
 export default defineConfig({
   jsxFramework: "qwik",
 
@@ -23,5 +22,5 @@ export default defineConfig({
   emitPackage: true,
 
   // The output directory for your css system
-  outdir: "src/styled-system",
+  outdir: "@project/styled-system",
 });

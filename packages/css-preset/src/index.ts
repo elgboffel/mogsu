@@ -15,7 +15,7 @@ export default definePreset({
     breakpoints,
     tokens: {
       colors: {
-        primary: { value: "#7ec4c0" },
+        primary: { value: "#000" },
       },
     },
   },

@@ -1,4 +1,4 @@
-import {defineConfig} from "@pandacss/dev";
+import { defineConfig } from "@pandacss/dev";
 
 import preset from "@project/css-preset";
 
@@ -7,12 +7,11 @@ export default defineConfig({
 
   presets: [preset],
 
-
   // Whether to use css reset
   preflight: true,
 
   // Where to look for your css declarations
-  include: ["./src/**/*.{js,jsx,ts,tsx}"],
+  include: ["./node_modules/@project/ui/src/**/*.tsx", "./src/**/*.{js,jsx,ts,tsx}"],
 
   // Files to exclude
   exclude: [],
@@ -22,6 +21,8 @@ export default defineConfig({
     extend: {},
   },
 
+  emitPackage: true,
+
   // The output directory for your css system
-  outdir: "src/styled-system",
+  outdir: "@project/styled-system",
 });
