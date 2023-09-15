@@ -8,7 +8,6 @@
 	],
 	"scripts": {
 		"build": "tsup",
-		"dev": "tsup --watch",
 		"typecheck": "tsc --project tsconfig.json --pretty --noEmit",
 		"lint": "eslint \"src/**/*.{ts,tsx,js,jsx,mjs,cjs,json,graphql}\" --fix",
 		"format": "prettier --write \"src/**/*.{css,scss,sass,ts,tsx,js,jsx,md,json,graphql,mjs,cjs}\"",

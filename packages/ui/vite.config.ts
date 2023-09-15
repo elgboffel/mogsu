@@ -17,7 +17,7 @@ export default defineConfig(() => {
       },
       rollupOptions: {
         // externalize deps that shouldn't be bundled into the library
-        external: [/^node:.*/, ...excludeAll(dependencies), ...excludeAll(peerDependencies)],
+        external: [/^node:.*/, "@project/styled-system", ...excludeAll(dependencies), ...excludeAll(peerDependencies)],
       },
     },
     plugins: [qwikVite(), tsconfigPaths()],

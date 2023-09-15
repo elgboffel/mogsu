@@ -17,6 +17,8 @@ export default defineConfig({
     extend: {},
   },
 
+  emitPackage: true,
+
   // The output directory for your css system
-  outdir: "src/styled-system",
+  outdir: "@project/styled-system",
 });
