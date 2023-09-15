@@ -26,9 +26,9 @@ build
 .cache
 .vscode
 .rollup.cache
+dist
 tsconfig.tsbuildinfo
 vite.config.ts
-postcss.config.js
 
 # Panda CSS
 src/styled-system

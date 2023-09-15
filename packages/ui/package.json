@@ -2,9 +2,16 @@
   "name": "@project/ui",
   "version": "0.0.1",
   "description": "Create a reusable Qwik component library",
-  "main": "./src/index.tsx",
+  "main": "./src/index.ts",
+  "qwik": "./lib/index.qwik.mjs",
   "types": "./lib-types/index.d.ts",
-  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib-types/index.d.ts"
+    }
+  },
   "files": [
     "lib",
     "lib-types",
@@ -14,7 +21,6 @@
     "node": ">=15.0.0"
   },
   "private": false,
-  "type": "module",
   "scripts": {
     "build": "qwik build",
     "build.lib": "vite build --mode lib",
@@ -24,8 +30,7 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
-    "prepare": "panda codegen --silent",
-    "prebuild": "pnpm prepare",
+    "prebuild.pandacss": "panda codegen --silent",
     "release": "np",
     "start": "vite --open --mode ssr",
     "test": "echo \"No test specified\" && exit 0",
@@ -33,13 +38,12 @@
   },
   "devDependencies": {
     "@builder.io/qwik": "1.2.11",
-    "@builder.io/vite-plugin-macro": "0.0.7",
+    "@builder.io/vite-plugin-macro": "~0.0.7",
     "@pandacss/dev": "^0.8.0",
     "@types/eslint": "8.44.1",
     "@types/node": "^20.4.5",
     "@typescript-eslint/eslint-plugin": "6.2.0",
     "@typescript-eslint/parser": "6.2.0",
-    "@project/css-preset": "workspace:*",
     "eslint": "8.45.0",
     "eslint-plugin-qwik": "latest",
     "np": "7.6.1",
