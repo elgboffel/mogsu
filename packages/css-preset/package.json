@@ -1,28 +1,29 @@
 {
-	"name": "@project/css-preset",
-	"version": "1.0.0",
-	"license": "MIT",
-	"main": "./src/index.ts",
-	"files": [
-		"src", "dist"
-	],
-	"scripts": {
-		"build": "tsup",
-		"typecheck": "tsc --project tsconfig.json --pretty --noEmit",
-		"lint": "eslint \"src/**/*.{ts,tsx,js,jsx,mjs,cjs,json,graphql}\" --fix",
-		"format": "prettier --write \"src/**/*.{css,scss,sass,ts,tsx,js,jsx,md,json,graphql,mjs,cjs}\"",
-		"format.check": "prettier --check ."
-	},
-	"dependencies": {
-		"@pandacss/preset-panda": "^0.11.1"
-	},
-	"devDependencies": {
-		"@pandacss/dev": "0.11.1",
-		"@types/node": "^20.3.1",
-		"eslint": "^8.43.0",
-		"eslint-config-custom": "workspace:*",
-		"tsconfig": "workspace:*",
-		"tsup": "7.2.0",
-		"typescript": "5.1.6"
-	}
+  "name": "@project/css-preset",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --project tsconfig.json --pretty --noEmit",
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx,mjs,cjs,json,graphql}\" --fix",
+    "format": "prettier --write \"src/**/*.{css,scss,sass,ts,tsx,js,jsx,md,json,graphql,mjs,cjs}\"",
+    "format.check": "prettier --check ."
+  },
+  "dependencies": {
+    "@pandacss/preset-panda": "^0.11.1"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "0.11.1",
+    "@types/node": "^20.5.1",
+    "eslint": "8.47.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "tsup": "7.2.0",
+    "typescript": "5.1.6"
+  }
 }
